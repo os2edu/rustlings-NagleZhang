@@ -4,7 +4,7 @@
 // Why not? What should we do to fix it?
 // Execute `rustlings hint errors3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
+use std::process;
 
 use std::num::ParseIntError;
 
@@ -12,12 +12,18 @@ fn main() {
     let mut tokens = 100;
     let pretend_user_input = "8";
 
-    let cost = total_cost(pretend_user_input)?;
+    let cost = total_cost(pretend_user_input);
 
-    if cost > tokens {
+    let x = cost.unwrap();
+    match x {
+        i32 => println!(""),
+        ParseIntError =>  process::exit(1),
+    }
+
+    if x > tokens {
         println!("You can't afford that many!");
     } else {
-        tokens -= cost;
+        tokens -= x;
         println!("You now have {} tokens.", tokens);
     }
 }
