@@ -1,6 +1,7 @@
 // clippy3.rs
 // Here's a couple more easy Clippy fixes, so you can see its utility.
 
+//I AM NOT DONE
 #[allow(unused_variables, unused_assignments)]
 fn main() {
     let my_option: Option<()> = None;
@@ -14,7 +15,9 @@ fn main() {
     ];
     println!("My array! Here it is: {:?}", my_arr);
 
-    let my_empty_vec = vec![1, 2, 3, 4, 5].clear();
+    let mut my_empty_vec = vec![1, 2, 3, 4, 5];
+    my_empty_vec.clear();
+
     println!("This Vec is empty, see? {:?}", my_empty_vec);
 
     let mut value_a = 45;
